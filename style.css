@@ -468,7 +468,7 @@ label{
   }
 
   .contenedor {
-    width: 95vw; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    width: 99vw; /* Ocupa el 100% del ancho en pantallas pequeñas */
     grid-template-columns: repeat(4, 1fr); /* Ajusta a 4 columnas en pantallas pequeñas */
     grid-template-rows: repeat(5, 1fr); /* Definir el número de filas */
     grid-gap: 25px;
