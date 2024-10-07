@@ -111,8 +111,49 @@ label{
   position: relative;
 }
 
+.caja.dos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.flag {
+    width: 50px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.text {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black; /* El texto siempre será negro */
+    transition: transform 0.5s ease;
+}
+
+.caja.dos:hover .flag {
+    transform: scale(1.2);
+}
+
+.caja.dos:hover .text {
+    transform: scale(1.1); /* Escala ligera en hover */
+}
+
+
 .cinco {
-  background-image: url(assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com.png);
+  background-image: url('assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com.png');
   background-size: cover; /* Asegura que la imagen cubra todo el área */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -128,7 +169,7 @@ label{
 
 .siete {
   grid-column: 1 / 4;
-  grid-row: 3 / 5; /* Ocupa más filas */
+  grid-row: 4 / 5; /* Ocupa más filas */
 }
 
 .ocho {
@@ -147,6 +188,26 @@ label{
   grid-row: 4;
 }
 
+.titulo {
+  text-align: center; /* Centra el título */
+  color: white; /* Color blanco del título */
+  font-size: 4vw; /* Tamaño del texto del título ajustable */
+  margin-bottom: 10px; /* Espacio entre el título y la caja */
+  text-shadow: 0 0 2px white, 0 0 1px white, 0 0 1px white; /* Efecto neón */
+}
+
+.once {
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  text-align: center; /* Centra el texto dentro de la caja */
+  padding: 20px; /* Espaciado interno */
+}
+
+.once p {
+  color: rgb(255, 255, 255); /* Color del párrafo */
+  text-shadow: 0 0 2px rgb(0, 0, 0), 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0); /* Efecto neón */
+  font-size: 1vw; /* Tamaño del texto del párrafo ajustable */
+}
 
 .dos iframe {
   position: absolute;
@@ -360,6 +421,16 @@ label{
 
 
 @media (max-width: 1000px) {
+  body {
+    background-color: none; /* Fondo oscuro */
+    color: #f0f0f0; /* Texto claro */
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin: 0; /* Elimina márgenes */
+  }
+
   .caja {
     position: relative;
     height: 100%;
@@ -397,7 +468,7 @@ label{
   }
 
   .contenedor {
-    width: 100vw; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    width: 95vw; /* Ocupa el 100% del ancho en pantallas pequeñas */
     grid-template-columns: repeat(4, 1fr); /* Ajusta a 4 columnas en pantallas pequeñas */
     grid-template-rows: repeat(5, 1fr); /* Definir el número de filas */
     grid-gap: 25px;
@@ -412,7 +483,7 @@ label{
     position: absolute;
     top: 0;
     left: 0;
-    width: 96vw;
+    width: 101vw;
     display: block;
     z-index: 100;
     padding: 0;
@@ -518,6 +589,32 @@ label{
     grid-row: 1;
   }
 
+  .caja.dos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+  .flag {
+    width: 200px;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+
+  .text {
+    margin-top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: black; /* El texto siempre será negro */
+    transition: transform 0.5s ease;
+  }
+  
+
   .cinco {
     grid-column: 1 / 3;
     grid-row: 2;
@@ -535,6 +632,14 @@ label{
   .seis {
     grid-column: 3 / 9;
     grid-row: 2;
+  }
+
+  .titulo {
+    text-align: center; /* Centra el título */
+    color: white; /* Color blanco del título */
+    font-size: 6vw; /* Tamaño del texto del título ajustable */
+    margin-bottom: 10px; /* Espacio entre el título y la caja */
+    text-shadow: 0 0 2px white, 0 0 1px white, 0 0 1px white; /* Efecto neón */
   }
 
   .ocho {
@@ -668,14 +773,17 @@ input:checked + label {
 }
 
 
-  .siete {
-    grid-column: 1 / 2;
-    grid-row: 4;
-  }
+.siete {
+  grid-column: 1 / 9;
+  grid-row: 5 / 7;
+  height: 300px;
+  margin-top: 335px;
+}
 
   .nueve {
-    grid-column: 2 / 4;
+    grid-column: 1 / 9;
     grid-row: 4;
+    height: 300px;
   }
 
   .nueve iframe {
@@ -684,11 +792,75 @@ input:checked + label {
   }
 
   .diez {
-    grid-column: 4 / 9;
-    grid-row: 4;
+    grid-column: 1 / 9;
+    grid-row: 5 / 6;
+    height: 300px;
+}
+
+.caja.diez {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra la imagen y el título horizontalmente */
+  background-image: url('assets/habilidades.png');
+  width: 100vw;
+}
+
+  .titulo2 {
+    text-align: center;
+    font-size: 8vw;
+    margin-bottom: 115px;
+    color: #000000;
+    text-shadow: 0 0 8px #ffffff;
+  } 
+
+.diez img {
+  width: 400px;  /* Ancho de la imagen */
+  height: auto; /* Altura de la imagen */
+  object-fit: cover; /* Mantiene las proporciones de la imagen */
+}
+
+  
+  .once {
+    grid-column: 1 / 7;
+    grid-row: 4 / 5;
+    text-align: center;
+    padding: 20px;
+    margin-top: 326px;
+    height: 300px;
+}
+  
+  .once p {
+    color: rgb(255, 255, 255); /* Color del párrafo */
+    text-shadow: 0 0 2px rgb(0, 0, 0), 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0); /* Efecto neón */
+    font-size: 3vw; /* Tamaño del texto del párrafo ajustable */
   }
 
   .caja {
     border-radius: 10px;
+  }
+
+  .animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0vw;
+    height: 0vh;
+    z-index: -1; /* Puts the background behind the content */
+    background: linear-gradient(45deg, #000000, #171717, #2e2e2e, #444444, #5b5b5b, #d2d4d5);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 100% 100%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
   }
 }
