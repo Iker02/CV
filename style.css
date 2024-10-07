@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap'); /* Fuente estilo reloj */
+body {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #f0f0f0; /* Texto claro */
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin: 0; /* Elimina márgenes */
+}
+
+.contenedor {
+  display: grid;
+  width: 60vw; /* Ocupa el 60% del ancho en pantallas grandes */
+  height: 150vh; /* Ocupa el 90% de la altura de la pantalla */
+  grid-template-columns: repeat(9, 1fr); /* Más columnas para mayor flexibilidad */
+  grid-template-rows: repeat(4, 1fr); /* Definir el número de filas */
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+.caja {
+  border: 5px solid #4d4d4d; /* Borde oscuro */
+  background-color: #2e2e2e; /* Fondo oscuro */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em; /* Tamaño de fuente */
+  color: #e0e0e0; /* Color del texto en las cajas */
+}
+
+.time {
+  background-color: #1E1E1E; /* Fondo oscuro */
+  color: wheat; /* Verde estilo reloj digital */
+  font-family: 'Orbitron', sans-serif; /* Aplicar la fuente digital */
+  font-size: 3rem; /* Texto grande para el reloj */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-image: url('digital-clock-bg.png'); /* Imagen de fondo sutil */
+  background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+}
+
+.uno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1 / 6;
+  grid-row: 1;
+}
+
+.uno img {
+  width: 120px; /* Ajusta el tamaño de la imagen */
+  height: 120px;
+  border-radius: 20%; /* Redondea la imagen */
+  object-fit: cover; /* Asegura que la imagen mantenga proporciones */
+}
+
+.uno h2 {
+  margin: 5px 0;
+  font-size: 1.5em;
+}
+
+.uno p {
+  margin: 0;
+  font-size: 1.1em;
+  color: #666;
+}
+
+
+.dos {
+  grid-column: 6 / 10; /* Caja más ancha */
+  grid-row: 1;
+  position: relative;
+}
+
+.cinco {
+  background-image: url(assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com.png);
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  grid-column: 1 / 5;
+  grid-row: 2;
+}
+
+
+.seis {
+  grid-column: 5 / 10; /* Caja ampliada */
+  grid-row: 2;
+}
+
+.siete {
+  grid-column: 1 / 4;
+  grid-row: 3 / 5; /* Ocupa más filas */
+}
+
+.ocho {
+  grid-column: 4 / 10; /* Ampliada horizontalmente */
+  grid-row: 3;
+}
+
+.nueve {
+  grid-column: 4 / 7;
+  grid-row: 4;
+  background-color: #8000a8;
+}
+
+.diez {
+  grid-column: 7 / 10;
+  grid-row: 4;
+}
+
+
+.dos iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+
+.cinco .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 85%;
+}
+
+.cinco .item p {
+  margin: 5px;
+  font-size: 2em;
+}
+
+.seis iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.siete iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.ocho iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.nueve iframe {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+}
+
+ a {
+   cursor: pointer;
+ }
+ a:hover {
+   text-decoration: none;
+ }
+ 
+ .section{
+   position: relative;
+   width: 100%;
+   display: block;
+ }
+ .over-hide{
+   overflow: hidden;
+ }
+ [type="radio"]:checked,
+ [type="radio"]:not(:checked){
+   position: absolute;
+   left: -9999px;
+ }
+ .checkbox:checked + label,
+ .checkbox:not(:checked) + label{
+   position: relative;
+   cursor: pointer;
+   margin: 0 auto;
+   text-align: center;
+   margin-right: 6px;
+   margin-left: 6px;
+   display: inline-block;
+   width: 50px;
+   height: 50px;
+   border: 3px solid #bdc3c7;
+   background-size: cover;
+   background-position: center;
+   box-sizing: border-box;
+   -webkit-transition: all 0.2s ease;
+   transition: all 0.2s ease;
+   background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+   animation: border-transform 6s linear infinite alternate forwards;
+     -webkit-animation-play-state: paused;
+     -moz-animation-play-state: paused;
+     animation-play-state: paused;
+ }
+ .checkbox.scnd + label{
+   background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+   
+ }
+ .checkbox.thrd + label{
+   background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+ }
+ .checkbox.foth + label{
+   background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+ }
+ 
+ .checkbox:checked + label{
+   box-shadow: 0 8px 25px 0 rgba(16,39,112,.3);
+   transform: scale(1.3);
+     -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+     animation-play-state: running;
+ }
+ @keyframes border-transform{
+   0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+   14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+   28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+   42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+   56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+   70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+   84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+ }
+ 
+ .slider-height-padding {
+   padding-top: 290px;
+ }
+ 
+ ul {
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 100%;
+   z-index: 100;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+ }
+ ul li {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: block;
+   z-index: 100;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   height: 280px;
+   border: 5px solid #bdc3c7;
+   background-size: cover;
+   background-position: center;
+   background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+   border-radius: 50%;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+   font-weight: 900;
+   font-size: 16px;
+   letter-spacing: 2px;
+   line-height: 2.7;
+   color: #343434;
+   writing-mode: vertical-rl;
+   opacity: 0;
+   pointer-events: none;
+   box-shadow: 0 8px 25px 0 rgba(16,39,112,.1);
+   -webkit-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+ }
+ ul li span {
+   mix-blend-mode: difference;
+ }
+ ul li:nth-child(2) {
+   background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+ }
+ ul li:nth-child(3) {
+   background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+ }
+ ul li:nth-child(4) {
+   background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+ }
+ 
+ 
+ .checkbox.frst:checked ~ ul li:nth-child(1) {
+   opacity: 1;
+   pointer-events: auto;
+   border-radius: 16px;
+   z-index: 9999;
+ }
+ .checkbox.scnd:checked ~ ul li:nth-child(2) {
+   opacity: 1;
+   pointer-events: auto;
+   border-radius: 16px;
+   z-index: 9999
+ }
+ .checkbox.thrd:checked ~ ul li:nth-child(3) {
+   opacity: 1;
+   pointer-events: auto;
+   border-radius: 16px;
+   z-index: 9999
+ }
+ .checkbox.foth:checked ~ ul li:nth-child(4) {
+   opacity: 1;
+   pointer-events: auto;
+   border-radius: 16px;
+   z-index: 9999
+ }
+ 
+ .logo {
+   position: absolute;
+   top: 30px;
+   right: 30px;
+   display: block;
+   z-index: 100;
+   transition: all 250ms linear;
+ }
+ .logo img {
+   height: 26px;
+   width: auto;
+   display: block;
+ }
+
+
+@media (max-width: 1000px) {
+  .caja {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  ul li {
+    height: 3%;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .contenedor {
+    width: 100vw; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    grid-template-columns: repeat(4, 1fr); /* Ajusta a 4 columnas en pantallas pequeñas */
+    grid-template-rows: repeat(5, 1fr); /* Definir el número de filas */
+    grid-gap: 10px;
+  }
+
+  .slider-height-padding {
+    margin-top: 0;
+    padding-top: 0px;
+  }
+
+  ul li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    display: block;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 480px;
+    border: 5px solid #bdc3c7;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 2.7;
+    color: #343434;
+    writing-mode: vertical-rl;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 8px 25px 0 rgba(16,39,112,.1);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  .uno {
+    bottom: 0;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente el contenido */
+    padding: 0; /* Elimina cualquier relleno extra */
+    margin: 0; /* Elimina márgenes */
+  }
+  
+  label{
+    z-index: 9999;
+  }
+
+  .uno img {
+    width: 220px; /* Ajusta el tamaño de la imagen */
+    height: 220px;
+    object-fit: cover; /* Asegura que la imagen mantenga proporciones */
+  }
+
+  .dos {
+    grid-column: 3 / 9; /* Se adapta manteniendo la misma configuración */
+    grid-row: 1;
+  }
+
+  .cinco {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  .cinco .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 85%;
+  }
+
+  .seis {
+    grid-column: 3 / 9;
+    grid-row: 2;
+  }
+
+  .ocho {
+    grid-column: 1 / 9;
+    grid-row: 3 / 4;
+  }
+
+  .ocho form {
+    width: 100%; /* El formulario ocupará el 100% de la caja */
+    height: 100%; /* Ocupará el 100% de la altura de la caja */
+    position: relative;
+    white-space: nowrap;
+  }
+
+  /* Para ajustar el slider a la caja ocho */
+.caja.ocho {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section.full-height {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider-height-padding {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+ul {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  transition: transform 0.5s ease-in-out;
+}
+
+li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-size: 2rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Efecto de slider */
+input#slide-1:checked ~ ul {
+  transform: translateX(0);
+}
+
+input#slide-2:checked ~ ul {
+  transform: translateX(-100%);
+}
+
+input#slide-3:checked ~ ul {
+  transform: translateX(-200%);
+}
+
+input#slide-4:checked ~ ul {
+  transform: translateX(-300%);
+}
+
+.container {
+  height: 100%;
+}
+
+.row-full-height-justify-content-center{
+  height: 100%;
+}
+
+.col-lg-10-col-xl-8-align-self-center-padding-tb{
+  height: 100%;
+}
+
+
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 10px 5px;
+}
+
+input:checked + label {
+  background-color: #333;
+}
+
+
+  .siete {
+    grid-column: 1 / 2;
+    grid-row: 4;
+  }
+
+  .nueve {
+    grid-column: 2 / 4;
+    grid-row: 4;
+  }
+
+  .nueve iframe {
+    padding-top: 0;
+    height: 76%;
+  }
+
+  .diez {
+    grid-column: 4 / 9;
+    grid-row: 4;
+  }
+
+  .caja {
+    border-radius: 10px;
+  }
+}

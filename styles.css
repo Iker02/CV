@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap'); /* Fuente estilo reloj */
+
+body {
+    font-family: sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #f0f0f0; /* Texto claro */
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-gap: 20px;
+    padding: 20px;
+    max-width: 50%; /* La cuadrícula ocupará el 50% del ancho de la pantalla */
+    margin: 0 auto; /* Centrar la cuadrícula */
+    box-sizing: border-box;
+}
+
+.item {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #f0f0f0;
+    background-color: #1E1E1E; /* Fondo oscuro predeterminado */
+}
+
+
+.time {
+    background-color: #1E1E1E; /* Fondo oscuro */
+    color: wheat; /* Verde estilo reloj digital */
+    font-family: 'Orbitron', sans-serif; /* Aplicar la fuente digital */
+    font-size: 3rem; /* Texto grande para el reloj */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url('digital-clock-bg.png'); /* Imagen de fondo sutil */
+    background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+}
+
+.time p {
+    margin: 0;
+    letter-spacing: 0.1em; /* Separación entre los dígitos */
+    text-shadow: 0px 0px 8px #000000; /* Resplandor verde para efecto digital */
+}
+
+
+/* Clase .logo será la mitad de pequeña que el resto de los items */
+.logo {
+    grid-column: span 1; /* Se asegura que ocupe solo una columna */
+    height: 30%; /* Reducimos la altura a la mitad en comparación a los otros elementos */
+    width: 30%;
+    top: 0;
+    left: 0;
+}
+
+.logo-padre {
+    position: relative; /* Hacemos que el contenedor padre sea relativo */
+    background-color: #121212;
+    padding: 0;
+    height: 100%; /* Asegura que ocupe todo el alto del contenedor */
+}
+
+.logo2 {
+    position: absolute; /* Posicionamiento absoluto dentro de logo-padre */
+    right: 0; /* Se alinea a la derecha */
+    bottom: 0; /* Se alinea en la parte inferior */
+    height: 30%; /* Altura personalizada */
+    width: 30%; /* Ancho personalizado */
+    border-radius: 10px;
+}
+
+.logo2 img {
+    width: 100%;  /* La imagen ocupa todo el ancho del contenedor */
+    height: 100%; /* La imagen ocupa todo el alto del contenedor */
+    object-fit: cover; /* Mantiene las proporciones */
+    border-radius: 10px;
+}
+
+
+.logo img{
+    width: 100%;  /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
+    height: 100%; /* Asegura que la imagen ocupe el 100% de la altura del contenedor */
+    object-fit: cover; /* Mantiene las proporciones y recorta si es necesario */
+    border-radius: 10px;
+}
+
+/* Colores personalizados para cada elemento */
+.profile {
+    background-color: #333333; /* Un tono más claro de negro */
+}
+
+.profile img {
+    height: 50%;
+    width: auto;
+}
+
+.twitter { 
+    background-color: #1DA1F2; /* Azul de Twitter */
+}
+
+.bio {
+    background-color: #2A2A2A; /* Bio con otro tono oscuro */
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 2; /* Ocupa 2 filas */
+}
+
+.github {
+    background-color: #24292e; /* Gris oscuro de GitHub */
+}
+
+.spotify {
+    background-color: #1DB954; /* Verde de Spotify */
+    grid-column: span 2; /* Ocupa todo el ancho */
+}
+
+.discord {
+    background-color: #7289da; /* Azul de Discord */
+}
+
+.time {
+    background-color: #444444; /* Otro tono oscuro para el tiempo */
+}
+
+.location {
+    background-color: #3E3E3E; /* Fondo oscuro para la ubicación */
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        max-width: 100%; /* Ocupar todo el ancho en dispositivos pequeños */
+    }
+}
