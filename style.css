@@ -9,6 +9,33 @@ body {
   margin: 0; /* Elimina márgenes */
 }
 
+/* Background container for the animated effect */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Puts the background behind the content */
+  background: linear-gradient(45deg, #000000, #171717, #2e2e2e, #444444, #5b5b5b, #d2d4d5);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 .contenedor {
   display: grid;
   width: 60vw; /* Ocupa el 60% del ancho en pantallas grandes */
@@ -20,8 +47,8 @@ body {
 }
 
 .caja {
-  border: 5px solid #4d4d4d; /* Borde oscuro */
   background-color: #2e2e2e; /* Fondo oscuro */
+  border: 5px solid #1E1E1E; /* Define el grosor del borde */
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -53,6 +80,10 @@ body {
   justify-content: center;
   grid-column: 1 / 6;
   grid-row: 1;
+}
+
+label{
+  z-index: 9999;
 }
 
 .uno img {
@@ -195,21 +226,21 @@ body {
    box-sizing: border-box;
    -webkit-transition: all 0.2s ease;
    transition: all 0.2s ease;
-   background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+   background-image: url('assets/carrusel3.jpg');
    animation: border-transform 6s linear infinite alternate forwards;
      -webkit-animation-play-state: paused;
      -moz-animation-play-state: paused;
      animation-play-state: paused;
  }
  .checkbox.scnd + label{
-   background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+   background-image: url('assets/kaws.jpg');
    
  }
  .checkbox.thrd + label{
-   background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+   background-image: url('assets/image-login.jpg');
  }
  .checkbox.foth + label{
-   background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+   background-image: url('assets/web-page-image.png');
  }
  
  .checkbox:checked + label{
@@ -254,11 +285,11 @@ body {
    padding: 0;
    margin: 0;
    list-style: none;
-   height: 280px;
+   height: 47vh;
    border: 5px solid #bdc3c7;
    background-size: cover;
    background-position: center;
-   background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+   background-image: url('assets/carrusel3.jpg');
    border-radius: 50%;
    box-sizing: border-box;
    font-family: 'Poppins', sans-serif;
@@ -278,13 +309,13 @@ body {
    mix-blend-mode: difference;
  }
  ul li:nth-child(2) {
-   background-image: url('https://assets.codepen.io/1462889/sl2.jpg');
+   background-image: url('assets/kaws.jpg');
  }
  ul li:nth-child(3) {
-   background-image: url('https://assets.codepen.io/1462889/sl3.jpg');
+   background-image: url('assets/image-login.jpg');
  }
  ul li:nth-child(4) {
-   background-image: url('https://assets.codepen.io/1462889/sl4.jpg');
+   background-image: url('assets/web-page-image.png');
  }
  
  
@@ -335,6 +366,30 @@ body {
     width: 100%;
   }
 
+  .checkbox:checked + label,
+  .checkbox:not(:checked) + label{
+    position: relative;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    margin-right: 6px;
+    margin-left: 6px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 3px solid #bdc3c7;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-image: url('assets/carrusel3.jpg');
+    animation: border-transform 6s linear infinite alternate forwards;
+      -webkit-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      animation-play-state: paused;
+  }
+
   ul li {
     height: 3%;
     font-size: 13px;
@@ -345,7 +400,7 @@ body {
     width: 100vw; /* Ocupa el 100% del ancho en pantallas pequeñas */
     grid-template-columns: repeat(4, 1fr); /* Ajusta a 4 columnas en pantallas pequeñas */
     grid-template-rows: repeat(5, 1fr); /* Definir el número de filas */
-    grid-gap: 10px;
+    grid-gap: 25px;
   }
 
   .slider-height-padding {
@@ -357,17 +412,17 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 25%;
+    width: 96vw;
     display: block;
     z-index: 100;
     padding: 0;
     margin: 0;
     list-style: none;
-    height: 480px;
+    height: 100%;
     border: 5px solid #bdc3c7;
     background-size: cover;
     background-position: center;
-    background-image: url('https://assets.codepen.io/1462889/sl1.jpg');
+    background-image: url('assets/carrusel3.jpg');
     border-radius: 50%;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -383,6 +438,58 @@ body {
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
+  ul li span {
+    mix-blend-mode: difference;
+  }
+  ul li:nth-child(2) {
+    background-image: url('assets/kaws.jpg');
+  }
+  ul li:nth-child(3) {
+    background-image: url('assets/image-login.jpg');
+  }
+  ul li:nth-child(4) {
+    background-image: url('assets/web-page-image.png');
+  }
+
+  .checkbox:checked + label,
+  .checkbox:not(:checked) + label {
+    position: relative;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    margin-right: 6px;
+    margin-left: 6px;
+    display: inline-block;
+    width: 80px; /* Asegúrate de que el tamaño sea adecuado */
+    height: 80px;
+    border: 3px solid #bdc3c7;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    background-image: url('assets/carrusel3.jpg');
+    animation: border-transform 6s linear infinite alternate forwards;
+    animation-play-state: paused;
+  }
+  
+  .checkbox.scnd + label {
+    background-image: url('assets/kaws.jpg');
+  }
+  
+  .checkbox.thrd + label {
+    background-image: url('assets/image-login.jpg');
+  }
+  
+  .checkbox.foth + label {
+    background-image: url('assets/web-page-image.png');
+  }
+  
+  .checkbox:checked + label {
+    box-shadow: 0 8px 25px 0 rgba(16, 39, 112, 0.3);
+    transform: scale(1.3);
+    animation-play-state: running;
+  }
+  
 
   .uno {
     bottom: 0;
@@ -467,7 +574,7 @@ body {
 
 ul {
   display: flex;
-  width: 400%;
+  width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -495,15 +602,15 @@ input#slide-1:checked ~ ul {
 }
 
 input#slide-2:checked ~ ul {
-  transform: translateX(-100%);
+  transform: translateX(0%);
 }
 
 input#slide-3:checked ~ ul {
-  transform: translateX(-200%);
+  transform: translateX(0%);
 }
 
 input#slide-4:checked ~ ul {
-  transform: translateX(-300%);
+  transform: translateX(0%);
 }
 
 .container {
@@ -516,6 +623,32 @@ input#slide-4:checked ~ ul {
 
 .col-lg-10-col-xl-8-align-self-center-padding-tb{
   height: 100%;
+}
+
+ 
+.checkbox.frst:checked ~ ul li:nth-child(1) {
+  opacity: 1;
+  pointer-events: auto;
+  border-radius: 16px;
+  z-index: 9999;
+}
+.checkbox.scnd:checked ~ ul li:nth-child(2) {
+  opacity: 1;
+  pointer-events: auto;
+  border-radius: 16px;
+  z-index: 9999
+}
+.checkbox.thrd:checked ~ ul li:nth-child(3) {
+  opacity: 1;
+  pointer-events: auto;
+  border-radius: 16px;
+  z-index: 9999
+}
+.checkbox.foth:checked ~ ul li:nth-child(4) {
+  opacity: 1;
+  pointer-events: auto;
+  border-radius: 16px;
+  z-index: 9999
 }
 
 
