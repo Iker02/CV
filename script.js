@@ -1,36 +1,43 @@
-// Actualizar la hora en tiempo real
-function updateTime() {
-    const timeElement = document.querySelector('.item.time p');
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    timeElement.textContent = `${hours}:${minutes}`;
-}
+// Seleccionamos el contenedor donde irá el modelo
+const container = document.getElementById('modelContainer');
 
-// Simular una canción con duración de 30 segundos
-function startProgressBar() {
-    const progressBar = document.querySelector('.progress-bar div');
-    progressBar.style.animation = 'progress 30s linear infinite';
-}
+// Creamos la escena
+const scene = new THREE.Scene();
 
-startProgressBar();
+// Creamos la cámara
+const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+camera.position.z = 5;
 
+// Creamos el renderer
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+container.appendChild(renderer.domElement);
 
-// Llamada inicial para actualizar la hora
-updateTime();
-// Actualiza la hora cada minuto
-setInterval(updateTime, 60000);
+// Agregamos luz a la escena
+const light = new THREE.AmbientLight(0x404040); // Luz ambiental
+scene.add(light);
 
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); // Luz direccional
+scene.add(directionalLight);
 
-document.addEventListener('keydown', function(event) {
-    const radios = document.querySelectorAll('input[name="slider"]');
-    let checkedIndex = Array.from(radios).findIndex(radio => radio.checked);
-  
-    if (event.key === 'ArrowRight' && checkedIndex < radios.length - 1) {
-      radios[checkedIndex + 1].checked = true;
-    } else if (event.key === 'ArrowLeft' && checkedIndex > 0) {
-      radios[checkedIndex - 1].checked = true;
-    }
-  });
-  
+// Cargamos el archivo .glb
+const loader = new THREE.GLTFLoader();
+loader.load('assets/animacion_avatar.glb', function (gltf) {
+  const model = gltf.scene;
+  model.scale.set(1.5, 1.5, 1.5); // Ajustamos el tamaño del modelo
+  scene.add(model);
+
+  // Animación del modelo (opcional)
+  const animate = function () {
+    requestAnimationFrame(animate);
+
+    model.rotation.y += 0.01; // Rota lentamente el modelo sobre su eje Y
+
+    renderer.render(scene, camera);
+  };
+
+  animate();
+}, undefined, function (error) {
+  console.error(error);
+});
   

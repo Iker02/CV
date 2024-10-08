@@ -73,6 +73,44 @@ body {
   background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
 }
 
+#modelContainer {
+  width: 100%;  
+  height: 100%; 
+  position: relative; /* Necesario para el posicionamiento del texto */
+  overflow: hidden;
+}
+
+#backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+  transform: translate(-50%, -50%);
+}
+
+.overlayText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el texto en el contenedor */
+  text-align: center;
+  color: white; /* Color del texto */
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Añade sombra al texto para mayor legibilidad */
+}
+
+.overlayText h2 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.overlayText p {
+  margin: 5px 0 0 0;
+}
+
 .uno {
   display: flex;
   flex-direction: column;
@@ -101,7 +139,7 @@ label{
 .uno p {
   margin: 0;
   font-size: 1.1em;
-  color: #666;
+  color: #ffffff;
 }
 
 
@@ -180,7 +218,7 @@ label{
 .nueve {
   grid-column: 4 / 7;
   grid-row: 4;
-  background-color: #8000a8;
+  background-color: #282828;
 }
 
 .diez {
@@ -788,7 +826,7 @@ input:checked + label {
 
   .nueve iframe {
     padding-top: 0;
-    height: 76%;
+    height: 55%;
   }
 
   .diez {
