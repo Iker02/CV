@@ -192,25 +192,48 @@ label{
 }
 
 
-.cinco {
-  background-image: url('assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com.png');
-  background-size: cover; /* Asegura que la imagen cubra todo el área */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+.diez {
+  background-image: url(assets/habilidades1.png);
+  background-size: contain; /* Asegura que la imagen se vea completa */
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
   grid-column: 1 / 5;
   grid-row: 2;
+  background-color: white;
 }
 
 
-.seis {
+.once {
   grid-column: 5 / 10; /* Caja ampliada */
   grid-row: 2;
+  background-color: #5b5b5b;
 }
 
 .siete {
   grid-column: 1 / 4;
   grid-row: 4 / 5; /* Ocupa más filas */
 }
+
+.caja.siete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b; /* Fondo oscuro */
+  width: 100%;
+}
+
+.github-link {
+  display: block;
+}
+
+.github-logo {
+  width: 150px; /* Ajusta el tamaño del logo según prefieras */
+  height: auto;
+  cursor: pointer;
+}
+
 
 .ocho {
   grid-column: 4 / 10; /* Ampliada horizontalmente */
@@ -223,17 +246,21 @@ label{
   background-color: #282828;
 }
 
-.diez {
+.cinco {
+  background-image: url('assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com1.png');
   grid-column: 7 / 10;
   grid-row: 4;
 }
 
-.caja.diez {
+.cinco.iframe{
+  height: 100%;
+}
+
+.caja.cinco {
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(assets/habilidades1.png);
   background-size: contain; /* Ajusta la imagen para que se vea completamente */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-position: center; /* Centra la imagen en la caja */
@@ -258,15 +285,63 @@ label{
   margin-bottom: 10px; /* Espacio entre el título y la caja */
 }
 
-.once {
+.caja.seis {
+  position: relative;
+}
+
+.popup-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: s0px;
+  left: 600px;
+  transform: translateX(-50%) translateY(-10px); /* Centramos horizontalmente y ajustamos verticalmente */
+  background-color: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente para un efecto más moderno */
+  color: white; /* El texto ahora será blanco para que contraste mejor */
+  border-radius: 10px; /* Bordes redondeados para un estilo más suave */
+  padding: 20px;
+  width: 500px;
+  text-align: center; /* Centramos el texto */
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Sombra más suave y grande */
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Transición más larga y con movimiento */
+  z-index: 1;
+}
+
+.caja.once:hover .popup-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Movimiento suave hacia arriba cuando se muestra */
+  z-index: 99999;
+}
+
+/* Animación de escala cuando aparece el pop-up */
+.caja.once:hover .popup-text {
+  animation: popUpScale 0.4s ease-in-out;
+}
+
+@keyframes popUpScale {
+  0% {
+    transform: scale(0.8) translateX(-50%) translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.seis {
   grid-column: 1 / 4;
   grid-row: 3 / 4;
   text-align: center; /* Centra el texto dentro de la caja */
-  padding: 20px; /* Espaciado interno */
-  background-color: #c3b2da;
+  background-color: #717171;
 }
 
-.once p {
+.seis p {
   color: rgb(255, 255, 255); /* Color del párrafo */
   text-shadow: 10 0 2px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(0, 0, 0); /* Efecto neón */
   font-size: 1vw; /* Tamaño del texto del párrafo ajustable */
@@ -278,7 +353,7 @@ label{
   height: 100%; 
 }
 
-.cinco .item {
+.diez .item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -287,7 +362,7 @@ label{
   width: 85%;
 }
 
-.cinco .item p {
+.diez .item p {
   margin: 5px;
   font-size: 2em;
 }
@@ -492,6 +567,7 @@ label{
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     margin: 0; /* Elimina márgenes */
+    margin-right: -90px;
   }
 
   .caja {
@@ -678,12 +754,22 @@ label{
   }
   
 
-  .cinco {
+  .diez {
     grid-column: 1 / 3;
     grid-row: 2;
   }
 
-  .cinco .item {
+.diez {
+    background-image: url(assets/habilidades21.png);
+    background-size: contain; /* Asegura que la imagen se vea completa */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+}
+
+
+  .diez .item {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -692,9 +778,63 @@ label{
     width: 85%;
   }
 
-  .seis {
+  .once {
     grid-column: 3 / 9;
     grid-row: 2;
+  }
+
+  .caja.once {
+    height: 100%;
+    width: 100%;
+  }
+
+  .once p {
+    color: rgb(255, 255, 255);
+    font-size: 3.5vw;
+  }
+
+  .popup-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    transform: translateX(-50%) translateY(-10px); /* Centramos horizontalmente y ajustamos verticalmente */
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente para un efecto más moderno */
+    color: white; /* El texto ahora será blanco para que contraste mejor */
+    border-radius: 10px; /* Bordes redondeados para un estilo más suave */
+    padding: 20px;
+    width: 500px;
+    text-align: center; /* Centramos el texto */
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Sombra más suave y grande */
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Transición más larga y con movimiento */
+    z-index: 1;
+  }
+  
+  .caja.once:hover .popup-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Movimiento suave hacia arriba cuando se muestra */
+    z-index: 99999;
+  }
+  
+  /* Animación de escala cuando aparece el pop-up */
+  .caja.once:hover .popup-text {
+    animation: popUpScale 0.4s ease-in-out;
+  }
+  
+  @keyframes popUpScale {
+    0% {
+      transform: scale(0.8) translateX(-50%) translateY(10px);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) translateX(-50%) translateY(0);
+      opacity: 1;
+    }
   }
 
   .titulo {
@@ -702,7 +842,7 @@ label{
     color: rgb(0, 0, 0); /* Color blanco del título */
     font-size: 6vw; /* Tamaño del texto del título ajustable */
     margin-bottom: 10px; /* Espacio entre el título y la caja */
-    text-shadow: 0 0 2px white, 0 0 1px white, 0 0 1px white; /* Efecto neón */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
   .ocho {
@@ -854,47 +994,54 @@ input:checked + label {
     height: 55%;
   }
 
-  .diez {
+  .cinco {
     grid-column: 1 / 9;
     grid-row: 5 / 6;
-    height: 300px;
+    background-image: url(assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com.png);
 }
 
-.caja.diez {
+.cinco iframe{
+  margin-bottom: 250px;
+}
+
+.caja.cinco {
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center; /* Centra la imagen y el título horizontalmente */
-  background-image: url('assets/habilidades.png');
-  width: 100vw;
+  width: 101vw;
+}
+
+.cinco img{
+  width: 100%;
 }
 
   .titulo2 {
     text-align: center;
     font-size: 8vw;
-    margin-bottom: 30px;
+    margin-bottom: -25px;
     color: #000000;
     text-shadow: 0 0 8px #ffffff;
   } 
 
-.diez img {
+.cinco img {
   width: 400px;  /* Ancho de la imagen */
   height: auto; /* Altura de la imagen */
   object-fit: cover; /* Mantiene las proporciones de la imagen */
 }
 
   
-  .once {
+  .seis {
     grid-column: 1 / 7;
     grid-row: 4 / 5;
     text-align: center;
     padding: 20px;
     margin-top: 326px;
     height: 300px;
-    background-color: #edeadc;
+    background-color: #000000;
 }
   
-  .once p {
+  .seis p {
     color: rgb(255, 255, 255); /* Color del párrafo */
     text-shadow: 0 0 2px rgb(0, 0, 0), 0 0 1px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0); /* Efecto neón */
     font-size: 3vw; /* Tamaño del texto del párrafo ajustable */
