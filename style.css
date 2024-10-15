@@ -217,19 +217,21 @@ label{
 }
 
 .caja.siete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1b1b1b; /* Fondo oscuro */
-  width: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Para que el video no se salga de la caja */
 }
 
 .github-link {
-  display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegura que el logo esté sobre el video */
 }
 
 .github-logo {
-  width: 150px; /* Ajusta el tamaño del logo según prefieras */
+  width: 200px; /* Ajusta el tamaño del logo según prefieras */
   height: auto;
   cursor: pointer;
 }
@@ -977,8 +979,8 @@ input:checked + label {
 
 
 .siete {
-  grid-column: 1 / 9;
-  grid-row: 5 / 7;
+  grid-column: 3 / 9;
+  grid-row: 4 / 7;
   height: 300px;
   margin-top: 335px;
 }
@@ -996,7 +998,7 @@ input:checked + label {
 
   .cinco {
     grid-column: 1 / 9;
-    grid-row: 5 / 6;
+    grid-row: 5 / 7;
     background-image: url(assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com.png);
 }
 
@@ -1030,12 +1032,28 @@ input:checked + label {
   object-fit: cover; /* Mantiene las proporciones de la imagen */
 }
 
+.caja.siete {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Ajusta la altura de la caja */
+    overflow: hidden; /* Para que el video no se salga de la caja */
+}
+
+.github-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Asegura que el logo esté sobre el video */
+}
+
+
   
   .seis {
-    grid-column: 1 / 7;
+    grid-column: 1 / 3;
     grid-row: 4 / 5;
     text-align: center;
-    padding: 20px;
+    padding: 8px;
     margin-top: 326px;
     height: 300px;
     background-color: #000000;
