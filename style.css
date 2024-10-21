@@ -252,14 +252,19 @@ label{
   background-image: url('assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com1.png');
   grid-column: 7 / 10;
   grid-row: 4;
+  background-size: cover; /* Hace que la imagen cubra todo el espacio */
+  background-position: center; /* Centra la imagen dentro de la caja */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  width: 100%;  
 }
+
 
 .cinco.iframe{
   height: 100%;
 }
 
 .caja.cinco {
-  background-color: white;
+  background-color: #334357;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1000,11 +1005,15 @@ input:checked + label {
     grid-column: 1 / 9;
     grid-row: 5 / 7;
     background-image: url(assets/Opera\ Instantánea_2024-10-04_113105_beta.maps.apple.com.png);
+    background-size: cover; /* Hace que la imagen cubra todo el espacio */
+    background-position: center; /* Centra la imagen dentro de la caja */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 100%;
+    height: 100%; /* Asegura que la caja ocupe el 100% del espacio */
 }
 
-.cinco iframe{
-  margin-bottom: 250px;
-}
+
+
 
 .caja.cinco {
   background-color: white;
@@ -1012,10 +1021,6 @@ input:checked + label {
   flex-direction: column;
   align-items: center; /* Centra la imagen y el título horizontalmente */
   width: 101vw;
-}
-
-.cinco img{
-  width: 100%;
 }
 
   .titulo2 {
@@ -1027,7 +1032,7 @@ input:checked + label {
   } 
 
 .cinco img {
-  width: 400px;  /* Ancho de la imagen */
+  width: 100%;  /* Ancho de la imagen */
   height: auto; /* Altura de la imagen */
   object-fit: cover; /* Mantiene las proporciones de la imagen */
 }
